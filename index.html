@@ -78,53 +78,6 @@
     }
     .theme-toggle:hover { transform: scale(1.1) rotate(15deg); }
 
-    /* Navigation */
-    .navbar {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(10px);
-      box-shadow: var(--shadow);
-      z-index: 999;
-      transition: var(--transition);
-    }
-    [data-theme="dark"] .navbar { background: rgba(15, 23, 42, 0.95); }
-
-    .nav-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .nav-logo { font-size: 1.5rem; font-weight: 700; color: var(--primary-color); text-decoration: none; }
-
-    .nav-menu { display: flex; list-style: none; gap: 2rem; }
-
-    .nav-link {
-      color: var(--text-dark);
-      text-decoration: none;
-      font-weight: 500;
-      transition: var(--transition);
-      position: relative;
-    }
-    .nav-link::after {
-      content: '';
-      position: absolute;
-      bottom: -5px;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: var(--primary-color);
-      transition: var(--transition);
-    }
-    .nav-link:hover::after { width: 100%; }
-
-    .hamburger { display: none; flex-direction: column; cursor: pointer; gap: 5px; }
-    .hamburger span { width: 25px; height: 3px; background: var(--text-dark); transition: var(--transition); }
-
     /* Hero */
     .hero {
       min-height: 100vh;
@@ -139,7 +92,6 @@
       padding: 2rem;
     }
 
-    /* ✅ Blue + dark visibility */
     .hero-overlay {
       position: absolute;
       inset: 0;
@@ -155,44 +107,10 @@
       max-width: 800px;
       color: white;
     }
+
     .hero-title { font-size: 3.5rem; font-weight: 700; margin-bottom: 1rem; }
     .hero-subtitle { font-size: 1.8rem; font-weight: 500; margin-bottom: 1.5rem; opacity: 0.95; }
     .hero-description { font-size: 1.2rem; line-height: 1.8; margin-bottom: 2rem; opacity: 0.9; }
-
-    .hero-buttons {
-      display: flex;
-      gap: 1rem;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .scroll-indicator {
-      position: absolute;
-      bottom: 30px;
-      left: 50%;
-      transform: translateX(-50%);
-      color: white;
-      font-size: 2rem;
-      animation: bounce 2s infinite;
-      z-index: 2;
-    }
-
-    @keyframes bounce {
-      0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
-      40% { transform: translateX(-50%) translateY(-10px); }
-      60% { transform: translateX(-50%) translateY(-5px); }
-    }
-
-    /* Animations */
-    .animate-fade-in { animation: fadeIn 1s ease-in; }
-    .animate-fade-in-delay { animation: fadeIn 1s ease-in 0.3s backwards; }
-    .animate-fade-in-delay-2 { animation: fadeIn 1s ease-in 0.6s backwards; }
-    .animate-fade-in-delay-3 { animation: fadeIn 1s ease-in 0.9s backwards; }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
 
     /* Buttons */
     .btn {
@@ -208,16 +126,11 @@
       border: none;
       font-size: 1rem;
     }
+
     .btn-primary { background: white; color: var(--primary-color); }
     .btn-primary:hover { transform: scale(1.05); box-shadow: var(--shadow-lg); }
-    .btn-secondary { background: rgba(255, 255, 255, 0.2); color: white; backdrop-filter: blur(10px); }
-    .btn-secondary:hover { background: rgba(255, 255, 255, 0.3); transform: scale(1.05); }
-    .btn-outline { background: transparent; color: white; border: 2px solid white; }
-    .btn-outline:hover { background: white; color: var(--primary-color); transform: scale(1.05); }
     .btn-small { padding: 0.5rem 1rem; font-size: 0.875rem; }
-    .btn-block { width: 100%; justify-content: center; }
 
-    /* Sections */
     .section { padding: 5rem 2rem; }
     .section-alt { background: var(--bg-secondary-dark); }
     .container { max-width: 1200px; margin: 0 auto; }
@@ -228,12 +141,6 @@
       text-align: center;
       margin-bottom: 1rem;
       color: var(--text-dark);
-    }
-    .section-subtitle {
-      text-align: center;
-      font-size: 1.1rem;
-      color: var(--text-muted);
-      margin-bottom: 3rem;
     }
 
     /* Projects */
@@ -252,10 +159,10 @@
     }
     .project-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); }
     .project-image { width: 100%; height: 200px; overflow: hidden; background: #0b1220; }
-    .project-image img { width: 100%; height: 100%; object-fit: cover; display: block; transition: var(--transition); }
-    .project-card:hover .project-image img { transform: scale(1.05); }
+    .project-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
     .project-content { padding: 1.5rem; position: relative; }
+
     .featured-badge {
       position: absolute;
       top: -30px;
@@ -271,8 +178,6 @@
       gap: 0.5rem;
     }
 
-    .project-content h3 { font-size: 1.3rem; margin-bottom: 1rem; color: var(--text-dark); }
-    .project-tools { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem; }
     .tool-tag {
       background: var(--primary-color);
       color: white;
@@ -281,7 +186,6 @@
       font-size: 0.75rem;
       font-weight: 500;
     }
-    .project-content p { color: var(--text-muted); margin-bottom: 1rem; line-height: 1.6; }
 
     /* Feedback */
     .feedback-container { max-width: 600px; margin: 0 auto; }
@@ -291,15 +195,6 @@
       border-radius: 12px;
       box-shadow: var(--shadow);
     }
-    .form-group { margin-bottom: 1.5rem; }
-    .form-group label {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      margin-bottom: 0.5rem;
-      color: var(--text-dark);
-      font-weight: 500;
-    }
 
     .form-group input,
     .form-group textarea {
@@ -307,18 +202,9 @@
       padding: 0.875rem;
       border: 2px solid var(--border-color);
       border-radius: 8px;
-      background: var(--bg-light);
-      color: var(--text-dark);
-      font-family: inherit;
-      font-size: 1rem;
-      transition: var(--transition);
     }
 
-    .form-group input:focus,
-    .form-group textarea:focus { outline: none; border-color: var(--primary-color); }
-
     .star-rating { display: flex; gap: 0.5rem; font-size: 2rem; cursor: pointer; }
-    .star-rating i { color: var(--border-color); transition: var(--transition); }
     .star-rating i.fas { color: var(--warning-color); }
 
     .feedback-success {
@@ -327,100 +213,25 @@
       border-radius: 12px;
       box-shadow: var(--shadow);
       text-align: center;
-    }
-    .feedback-success i { font-size: 4rem; color: var(--accent-color); margin-bottom: 1rem; }
-    .feedback-success h3 { font-size: 2rem; margin-bottom: 1rem; color: var(--text-dark); }
-    .feedback-success p { font-size: 1.2rem; color: var(--text-muted); }
-
-    /* Contact */
-    .contact-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-    }
-
-    .contact-card {
-      background: var(--bg-light);
-      padding: 2rem;
-      border-radius: 12px;
-      box-shadow: var(--shadow);
-      text-align: center;
-      transition: var(--transition);
-    }
-    .contact-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); }
-    .contact-icon { font-size: 3rem; color: var(--primary-color); margin-bottom: 1rem; }
-    .contact-card h3 { font-size: 1.3rem; margin-bottom: 0.5rem; color: var(--text-dark); }
-    .contact-card a { color: var(--text-muted); text-decoration: none; transition: var(--transition); }
-    .contact-card a:hover { color: var(--primary-color); }
-
-    /* Footer */
-    .footer { background: var(--bg-secondary-dark); padding: 2rem; text-align: center; }
-    .footer p { color: var(--text-muted); margin-bottom: 1rem; }
-    .social-links { display: flex; justify-content: center; gap: 1rem; }
-    .social-links a {
-      display: flex; align-items: center; justify-content: center;
-      width: 40px; height: 40px; border-radius: 50%;
-      background: var(--primary-color); color: white;
-      text-decoration: none; transition: var(--transition);
-    }
-    .social-links a:hover { transform: scale(1.1); background: #1D4ED8; }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      .nav-menu {
-        position: fixed;
-        left: -100%;
-        top: 70px;
-        flex-direction: column;
-        background: var(--bg-light);
-        width: 100%;
-        text-align: center;
-        transition: var(--transition);
-        box-shadow: var(--shadow-lg);
-        padding: 2rem 0;
-      }
-      .nav-menu.active { left: 0; }
-      .hamburger { display: flex; }
-
-      .hero-title { font-size: 2.5rem; }
-      .hero-subtitle { font-size: 1.3rem; }
-      .hero-description { font-size: 1rem; }
-      .hero-buttons { flex-direction: column; align-items: stretch; }
+      display:none;
     }
   </style>
 </head>
 
 <body>
 
-  <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
+  <button id="themeToggle" class="theme-toggle">
     <i class="fas fa-moon"></i>
   </button>
 
-  <!-- ✅ HERO -->
-  <section id="home" class="hero">
+  <section class="hero">
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <h1 class="hero-title animate-fade-in">Ashish Hidadugi</h1>
-      <h2 class="hero-subtitle animate-fade-in-delay">Data Analyst | Power BI | SQL | Python</h2>
-      <p class="hero-description animate-fade-in-delay-2">
+      <h1 class="hero-title">Ashish Hidadugi</h1>
+      <h2 class="hero-subtitle">Data Analyst | Power BI | SQL | Python</h2>
+      <p class="hero-description">
         I'm a Data Analyst skilled in SQL, Power BI, Python, Excel, and Tableau.
-        I create dashboards, clean data, track KPIs, and deliver insights for business decisions.
       </p>
-
-      <div class="hero-buttons animate-fade-in-delay-3">
-        <a href="https://drive.google.com/file/d/1TDO8yrQCZw0stqJW5VJ19ohD907RbECy/view?usp=sharing"
-          class="btn btn-primary" target="_blank">
-          <i class="fas fa-download"></i> Download Resume
-        </a>
-
-        <a href="#projects" class="btn btn-secondary">
-          <i class="fas fa-folder-open"></i> View Projects
-        </a>
-
-        <a href="#contact" class="btn btn-outline">
-          <i class="fas fa-envelope"></i> Contact Me
-        </a>
-      </div>
     </div>
   </section>
 
@@ -433,74 +244,50 @@
 
         <div class="project-card featured">
           <div class="project-image">
-            <img src="assets/projects/spectra-move.jpg" alt="Spectra Move Virtual Mouse">
+            <img src="assets/projects/spectra-move.jpg" alt="Spectra Move">
           </div>
           <div class="project-content">
             <div class="featured-badge"><i class="fas fa-award"></i> Award Winning</div>
             <h3>Spectra Move Virtual Mouse</h3>
-            <div class="project-tools">
-              <span class="tool-tag">OpenCV</span>
-              <span class="tool-tag">Python</span>
-              <span class="tool-tag">Computer Vision</span>
-            </div>
-            <p>Virtual mouse control system using hand gesture recognition and computer vision.</p>
+            <p>Virtual mouse control system using hand gesture recognition.</p>
             <a href="javascript:void(0)" class="btn btn-small"
-              onclick="openProjectModal('Spectra Move Virtual Mouse','assets/projects/spectra-move.jpg','Virtual mouse control system using hand gesture recognition and computer vision. Selected at 48th SPP KSCST–IISc Bangalore.')">View
-              Project</a>
+              onclick="openProjectModal('Spectra Move Virtual Mouse','assets/projects/spectra-move.jpg','Virtual mouse using gesture recognition.')">View Project</a>
           </div>
         </div>
 
         <div class="project-card">
           <div class="project-image">
-            <img src="assets/projects/blinkit.jpg" alt="Blinkit Sales Analysis">
+            <img src="assets/projects/blinkit.jpg" alt="Blinkit">
           </div>
           <div class="project-content">
-            <h3>Blinkit E-commerce Sales Analysis</h3>
-            <div class="project-tools">
-              <span class="tool-tag">Excel</span>
-              <span class="tool-tag">Pivot Tables</span>
-              <span class="tool-tag">Visualization</span>
-            </div>
-            <p>Comprehensive sales analysis of Blinkit data, identifying trends and revenue opportunities.</p>
+            <h3>Blinkit Sales Analysis</h3>
+            <p>Excel dashboard analysis of Blinkit sales data.</p>
             <a href="javascript:void(0)" class="btn btn-small"
-              onclick="openProjectModal('Blinkit Sales Analysis','assets/projects/blinkit.jpg','Comprehensive sales analysis of Blinkit data, identifying key trends and outlet performance.')">View
-              Project</a>
+              onclick="openProjectModal('Blinkit Sales Analysis','assets/projects/blinkit.jpg','Blinkit sales analysis using Excel.')">View Project</a>
           </div>
         </div>
 
         <div class="project-card">
           <div class="project-image">
-            <img src="assets/projects/hr-analytics.jpg" alt="HR Analytics Dashboard">
+            <img src="assets/projects/hr-analytics.jpg" alt="HR Analytics">
           </div>
           <div class="project-content">
             <h3>HR Analytics Dashboard</h3>
-            <div class="project-tools">
-              <span class="tool-tag">SQL</span>
-              <span class="tool-tag">Power BI</span>
-              <span class="tool-tag">DAX</span>
-            </div>
-            <p>Interactive HR dashboard tracking workforce distribution and demographics.</p>
+            <p>Power BI dashboard showing employee distribution & hiring trends.</p>
             <a href="javascript:void(0)" class="btn btn-small"
-              onclick="openProjectModal('HR Analytics Dashboard','assets/projects/hr-analytics.jpg','Interactive dashboard tracking gender distribution, hiring trends, and remote vs headquarters.')">View
-              Project</a>
+              onclick="openProjectModal('HR Analytics Dashboard','assets/projects/hr-analytics.jpg','HR dashboard using Power BI.')">View Project</a>
           </div>
         </div>
 
         <div class="project-card">
           <div class="project-image">
-            <img src="assets/projects/amazon-prime-dashboard.jpg" alt="Amazon Prime Video Dashboard">
+            <img src="assets/projects/amazon-prime-dashboard.jpg" alt="Amazon Dashboard">
           </div>
           <div class="project-content">
-            <h3>Amazon Prime Video Dashboard</h3>
-            <div class="project-tools">
-              <span class="tool-tag">Power BI</span>
-              <span class="tool-tag">DAX</span>
-              <span class="tool-tag">Dashboard</span>
-            </div>
-            <p>Power BI dashboard analyzing ratings, genres, release year trends and content type insights.</p>
+            <h3>Amazon Prime Dashboard</h3>
+            <p>Prime Video Power BI dashboard analyzing genres and ratings.</p>
             <a href="javascript:void(0)" class="btn btn-small"
-              onclick="openProjectModal('Amazon Prime Video Dashboard','assets/projects/amazon-prime-dashboard.jpg','Power BI dashboard analyzing ratings distribution, genres, and release year trends.')">View
-              Project</a>
+              onclick="openProjectModal('Amazon Prime Dashboard','assets/projects/amazon-prime-dashboard.jpg','Amazon Prime dashboard in Power BI.')">View Project</a>
           </div>
         </div>
 
@@ -512,22 +299,22 @@
   <section id="feedback" class="section section-alt">
     <div class="container">
       <h2 class="section-title">Share Your Feedback</h2>
-      <p class="section-subtitle">Your feedback helps me improve and grow. Please share your thoughts!</p>
 
       <div class="feedback-container">
         <form id="feedbackForm" class="feedback-form">
+
           <div class="form-group">
-            <label for="feedbackName"><i class="fas fa-user"></i> Name</label>
-            <input type="text" id="feedbackName" required placeholder="Enter your name">
+            <label>Name</label>
+            <input type="text" id="feedbackName" required>
           </div>
 
           <div class="form-group">
-            <label for="feedbackEmail"><i class="fas fa-envelope"></i> Email</label>
-            <input type="email" id="feedbackEmail" required placeholder="Enter your email">
+            <label>Email</label>
+            <input type="email" id="feedbackEmail" required>
           </div>
 
           <div class="form-group">
-            <label><i class="fas fa-star"></i> Rating</label>
+            <label>Rating</label>
             <div class="star-rating" id="starRating">
               <i class="far fa-star"></i>
               <i class="far fa-star"></i>
@@ -535,67 +322,24 @@
               <i class="far fa-star"></i>
               <i class="far fa-star"></i>
             </div>
-            <input type="hidden" id="feedbackRating" value="0" required>
+            <input type="hidden" id="feedbackRating" value="0">
           </div>
 
           <div class="form-group">
-            <label for="feedbackMessage"><i class="fas fa-comment"></i> Message / Feedback</label>
-            <textarea id="feedbackMessage" rows="5" required placeholder="Share your thoughts..."></textarea>
+            <label>Message</label>
+            <textarea id="feedbackMessage" rows="5" required></textarea>
           </div>
 
-          <button type="submit" class="btn btn-primary btn-block">
-            <i class="fas fa-paper-plane"></i> Submit Feedback
-          </button>
+          <button type="submit" class="btn btn-primary">Submit Feedback</button>
         </form>
 
-        <div id="feedbackSuccess" class="feedback-success" style="display:none;">
-          <i class="fas fa-check-circle"></i>
-          <h3>Thank You!</h3>
-          <p>✅ Thanks for your feedback, Ashish will contact you soon!</p>
+        <div id="feedbackSuccess" class="feedback-success">
+          <h3>✅ Thank You!</h3>
+          <p>Your feedback is submitted successfully.</p>
         </div>
       </div>
     </div>
   </section>
-
-  <!-- ✅ CONTACT -->
-  <section id="contact" class="section">
-    <div class="container">
-      <h2 class="section-title">Get In Touch</h2>
-      <p class="section-subtitle">Feel free to reach out for collaborations, opportunities, or just to connect!</p>
-
-      <div class="contact-grid">
-        <div class="contact-card">
-          <div class="contact-icon"><i class="fas fa-phone"></i></div>
-          <h3>Phone</h3>
-          <a href="tel:+917090641915">+91 7090641915</a>
-        </div>
-
-        <div class="contact-card">
-          <div class="contact-icon"><i class="fas fa-envelope"></i></div>
-          <h3>Email</h3>
-          <a href="mailto:ashishas0910@gmail.com">ashishas0910@gmail.com</a>
-        </div>
-
-        <div class="contact-card">
-          <div class="contact-icon"><i class="fab fa-linkedin"></i></div>
-          <h3>LinkedIn</h3>
-          <a href="https://www.linkedin.com/in/ashish-hidadugi/" target="_blank">Connect on LinkedIn</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ✅ FOOTER -->
-  <footer class="footer">
-    <div class="container">
-      <p>&copy; 2026 Ashish Hidadugi. All rights reserved.</p>
-      <div class="social-links">
-        <a href="https://www.linkedin.com/in/ashish-hidadugi/" target="_blank"><i class="fab fa-linkedin"></i></a>
-        <a href="mailto:ashishas0910@gmail.com"><i class="fas fa-envelope"></i></a>
-        <a href="tel:+917090641915"><i class="fas fa-phone"></i></a>
-      </div>
-    </div>
-  </footer>
 
   <!-- ✅ MODAL -->
   <div id="projectModal"
@@ -616,23 +360,6 @@
   </div>
 
   <script>
-    // ✅ Dark/Light
-    const themeToggle = document.getElementById('themeToggle');
-    const html = document.documentElement;
-
-    const currentTheme = localStorage.getItem('theme') || 'light';
-    html.setAttribute('data-theme', currentTheme);
-
-    themeToggle.addEventListener('click', () => {
-      const current = html.getAttribute('data-theme');
-      const next = current === 'light' ? 'dark' : 'light';
-      html.setAttribute('data-theme', next);
-      localStorage.setItem('theme', next);
-      themeToggle.innerHTML = next === "dark"
-        ? '<i class="fas fa-sun"></i>'
-        : '<i class="fas fa-moon"></i>';
-    });
-
     // ✅ Star Rating
     const stars = document.querySelectorAll("#starRating i");
     const ratingInput = document.getElementById("feedbackRating");
@@ -658,33 +385,33 @@
       });
     }
 
-    // ✅ Feedback Submit (Fix - no cors)
-    const feedbackForm = document.getElementById('feedbackForm');
-    const feedbackSuccess = document.getElementById('feedbackSuccess');
+    // ✅ FEEDBACK SUBMIT
+    const feedbackForm = document.getElementById("feedbackForm");
+    const feedbackSuccess = document.getElementById("feedbackSuccess");
 
     const GOOGLE_SCRIPT_URL =
-      "https://script.google.com/macros/s/AKfycbwqH4As4QZiSBrZsyIdJ5X9dhQ6uaaryAF94X-ml51XXcjyFivo9Ip05QnVmOb6CDD9/exec";
+      "https://script.google.com/macros/s/AKfycbxPPX1jDDnhoqYT767ET9Rv-Pgq79hd_ogE1yOve0im7DdYF7nV4TBGjMHmjovL2Zwo/exec";
 
-    feedbackForm.addEventListener('submit', async (e) => {
+    feedbackForm.addEventListener("submit", async (e) => {
       e.preventDefault();
 
       if (ratingInput.value === "0") {
-        alert("Please select a rating!");
+        alert("Please select rating!");
         return;
       }
 
       const formData = new FormData();
-      formData.append("name", document.getElementById('feedbackName').value.trim());
-      formData.append("email", document.getElementById('feedbackEmail').value.trim());
+      formData.append("name", document.getElementById("feedbackName").value.trim());
+      formData.append("email", document.getElementById("feedbackEmail").value.trim());
       formData.append("rating", ratingInput.value);
-      formData.append("message", document.getElementById('feedbackMessage').value.trim());
+      formData.append("message", document.getElementById("feedbackMessage").value.trim());
       formData.append("timestamp", new Date().toLocaleString());
 
       try {
         await fetch(GOOGLE_SCRIPT_URL, {
           method: "POST",
           mode: "no-cors",
-          body: formData
+          body: formData,
         });
 
         feedbackForm.style.display = "none";
@@ -692,39 +419,30 @@
 
         setTimeout(() => {
           feedbackForm.reset();
-          selectedRating = 0;
           ratingInput.value = "0";
+          selectedRating = 0;
           updateStars(0);
           feedbackForm.style.display = "block";
           feedbackSuccess.style.display = "none";
-        }, 5000);
+        }, 4000);
 
-      } catch (error) {
-        alert("❌ Feedback not submitted. Please try again.");
+      } catch (err) {
+        alert("❌ Feedback not submitted");
       }
     });
 
-    // ✅ Modal
+    // ✅ Modal functions
     function openProjectModal(title, img, desc) {
       document.getElementById("modalProjectTitle").innerText = title;
       document.getElementById("modalProjectImg").src = img;
       document.getElementById("modalProjectDesc").innerText = desc;
       document.getElementById("projectModal").style.display = "block";
-      document.body.style.overflow = "hidden";
     }
-
     function closeProjectModal() {
       document.getElementById("projectModal").style.display = "none";
-      document.body.style.overflow = "auto";
     }
-
-    window.openProjectModal = openProjectModal;
-    window.closeProjectModal = closeProjectModal;
-
-    document.getElementById("projectModal").addEventListener("click", (e) => {
-      if (e.target.id === "projectModal") closeProjectModal();
-    });
   </script>
 
 </body>
 </html>
+
