@@ -38,12 +38,7 @@
       --border-color: #334155;
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
 
     body {
@@ -169,10 +164,13 @@
       padding: 2rem;
     }
 
+    /* ✅ Blue little + Dark visibility */
     .hero-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(135deg, rgba(37, 99, 235, 0.9) 0%, rgba(29, 78, 216, 0.9) 100%);
+      background: linear-gradient(135deg,
+          rgba(30, 58, 138, 0.85) 0%,
+          rgba(15, 23, 42, 0.92) 100%);
     }
 
     .hero-content {
@@ -526,7 +524,7 @@
       position: fixed;
       inset: 0;
       z-index: 2000;
-      background: rgba(0,0,0,0.7);
+      background: rgba(0, 0, 0, 0.7);
       backdrop-filter: blur(6px);
     }
 
@@ -571,7 +569,6 @@
 </head>
 
 <body>
-
   <!-- Theme Toggle -->
   <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
     <i class="fas fa-moon"></i>
@@ -745,10 +742,10 @@
           <div class="skill-icon"><i class="fas fa-project-diagram"></i></div>
           <h3>Data Modeling</h3>
           <ul class="skill-list">
-            <li>Data Structures</li>
             <li>ETL Processes</li>
             <li>Data Warehousing</li>
             <li>Schema Design</li>
+            <li>Schema Modeling</li>
           </ul>
         </div>
 
@@ -796,79 +793,17 @@
     </div>
   </section>
 
-  <!-- ✅ Projects (ONLY 3) -->
+  <!-- ✅ Projects -->
   <section id="projects" class="section section-alt">
     <div class="container">
       <h2 class="section-title">Featured Projects</h2>
 
       <div class="projects-grid">
 
-        <!-- ✅ Blinkit -->
-        <div class="project-card">
-          <div class="project-image">
-            <img
-              src="https://ashish-hidadugi.github.io/ashish-portfolio/assets/projects/blinkit.jpg"
-              alt="Blinkit Sales Analysis">
-          </div>
-          <div class="project-content">
-            <h3>Blinkit E-commerce Sales Analysis</h3>
-            <div class="project-tools">
-              <span class="tool-tag">Excel</span>
-              <span class="tool-tag">Pivot Tables</span>
-              <span class="tool-tag">Data Visualization</span>
-            </div>
-            <p>
-              Comprehensive sales analysis of Blinkit e-commerce data, identifying key trends,
-              outlet performance, and revenue optimization opportunities.
-            </p>
-
-            <a href="javascript:void(0)" class="btn btn-small"
-              onclick="openProjectModal(
-                'Blinkit E-commerce Sales Analysis',
-                'https://ashish-hidadugi.github.io/ashish-portfolio/assets/projects/blinkit.jpg',
-                'Comprehensive sales analysis of Blinkit e-commerce data, identifying key trends, outlet performance, and revenue optimization opportunities.'
-              )">
-              View Project
-            </a>
-          </div>
-        </div>
-
-        <!-- ✅ HR Analytics -->
-        <div class="project-card">
-          <div class="project-image">
-            <img
-              src="https://ashish-hidadugi.github.io/ashish-portfolio/assets/projects/hr-analytics.jpg"
-              alt="HR Analytics Dashboard">
-          </div>
-          <div class="project-content">
-            <h3>HR Analytics Dashboard</h3>
-            <div class="project-tools">
-              <span class="tool-tag">SQL</span>
-              <span class="tool-tag">Power BI</span>
-              <span class="tool-tag">DAX</span>
-              <span class="tool-tag" style="background:#F59E0B;">Dashboard</span>
-            </div>
-            <p>
-              Interactive HR dashboard tracking gender distribution, hiring trends,
-              employee demographics, and remote vs headquarters analysis.
-            </p>
-
-            <a href="javascript:void(0)" class="btn btn-small"
-              onclick="openProjectModal(
-                'HR Analytics Dashboard',
-                'https://ashish-hidadugi.github.io/ashish-portfolio/assets/projects/hr-analytics.jpg',
-                'Interactive HR dashboard tracking employee distribution, gender split, hiring trends, race distribution, and headquarters vs remote employees.'
-              )">
-              View Project
-            </a>
-          </div>
-        </div>
-
-        <!-- ✅ Spectra Move -->
+        <!-- ✅ 1) Award First -->
         <div class="project-card featured">
           <div class="project-image">
-            <img
-              src="https://ashish-hidadugi.github.io/ashish-portfolio/assets/projects/spectra-move.jpg"
+            <img src="https://ashish-hidadugi.github.io/ashish-portfolio/assets/projects/spectra-move.jpg"
               alt="Spectra Move Virtual Mouse">
           </div>
           <div class="project-content">
@@ -883,15 +818,92 @@
               Virtual mouse control system using hand gesture recognition and computer vision.
               Selected at 48th SPP KSCST–IISc Bangalore.
             </p>
-
             <a href="javascript:void(0)" class="btn btn-small"
               onclick="openProjectModal(
                 'Spectra Move Virtual Mouse',
                 'https://ashish-hidadugi.github.io/ashish-portfolio/assets/projects/spectra-move.jpg',
                 'Virtual mouse control system using hand gesture recognition and computer vision. Selected at 48th SPP KSCST–IISc Bangalore.'
-              )">
-              View Project
-            </a>
+              )">View Project</a>
+          </div>
+        </div>
+
+        <!-- ✅ 2) Blinkit -->
+        <div class="project-card">
+          <div class="project-image">
+            <img src="https://ashish-hidadugi.github.io/ashish-portfolio/assets/projects/blinkit.jpg"
+              alt="Blinkit Sales Analysis">
+          </div>
+          <div class="project-content">
+            <h3>Blinkit E-commerce Sales Analysis</h3>
+            <div class="project-tools">
+              <span class="tool-tag">Excel</span>
+              <span class="tool-tag">Pivot Tables</span>
+              <span class="tool-tag">Data Visualization</span>
+            </div>
+            <p>
+              Comprehensive sales analysis of Blinkit e-commerce data, identifying key trends,
+              outlet performance, and revenue optimization opportunities.
+            </p>
+            <a href="javascript:void(0)" class="btn btn-small"
+              onclick="openProjectModal(
+                'Blinkit E-commerce Sales Analysis',
+                'https://ashish-hidadugi.github.io/ashish-portfolio/assets/projects/blinkit.jpg',
+                'Comprehensive sales analysis of Blinkit e-commerce data, identifying key trends, outlet performance, and revenue optimization opportunities.'
+              )">View Project</a>
+          </div>
+        </div>
+
+        <!-- ✅ 3) HR -->
+        <div class="project-card">
+          <div class="project-image">
+            <img src="https://ashish-hidadugi.github.io/ashish-portfolio/assets/projects/hr-analytics.jpg"
+              alt="HR Analytics Dashboard">
+          </div>
+          <div class="project-content">
+            <h3>HR Analytics Dashboard</h3>
+            <div class="project-tools">
+              <span class="tool-tag">SQL</span>
+              <span class="tool-tag">Power BI</span>
+              <span class="tool-tag">DAX</span>
+              <span class="tool-tag" style="background:#F59E0B;">Dashboard</span>
+            </div>
+            <p>
+              Interactive HR dashboard tracking gender distribution, hiring trends,
+              employee demographics, and remote vs headquarters analysis.
+            </p>
+            <a href="javascript:void(0)" class="btn btn-small"
+              onclick="openProjectModal(
+                'HR Analytics Dashboard',
+                'https://ashish-hidadugi.github.io/ashish-portfolio/assets/projects/hr-analytics.jpg',
+                'Interactive HR dashboard tracking gender distribution, headquarters vs remote, employees by state, hiring trends, and race distribution.'
+              )">View Project</a>
+          </div>
+        </div>
+
+        <!-- ✅ 4) Amazon Last -->
+        <div class="project-card">
+          <div class="project-image">
+            <img src="https://ashish-hidadugi.github.io/ashish-portfolio/assets/projects/amazon-prime-dashboard.jpg"
+              alt="Amazon Prime Video Dashboard">
+          </div>
+          <div class="project-content">
+            <h3>Amazon Prime Video Dashboard</h3>
+            <div class="project-tools">
+              <span class="tool-tag">Power BI</span>
+              <span class="tool-tag">DAX</span>
+              <span class="tool-tag">Data Visualization</span>
+              <span class="tool-tag" style="background:#F59E0B;">Dashboard</span>
+            </div>
+            <p>
+              Interactive Power BI dashboard: ratings distribution, genres, directors,
+              release year trends, and Movie vs TV show analysis.
+            </p>
+            <a href="javascript:void(0)" class="btn btn-small"
+              onclick="openProjectModal(
+                'Amazon Prime Video Dashboard',
+                'https://ashish-hidadugi.github.io/ashish-portfolio/assets/projects/amazon-prime-dashboard.jpg',
+                'Interactive dashboard built using Power BI: ratings, genres, total directors, and release year trends.'
+              )">View Project</a>
           </div>
         </div>
 
@@ -919,9 +931,7 @@
           <div class="cert-icon"><i class="fas fa-certificate"></i></div>
           <h3>SQL Certification</h3>
           <p class="cert-issuer">Edureka</p>
-          <a href="#" class="cert-link">
-            View Certificate <i class="fas fa-external-link-alt"></i>
-          </a>
+          <a href="#" class="cert-link">View Certificate <i class="fas fa-external-link-alt"></i></a>
         </div>
 
       </div>
@@ -1002,7 +1012,6 @@
           <h3>LinkedIn</h3>
           <a href="https://www.linkedin.com/in/ashish-hidadugi/" target="_blank">Connect on LinkedIn</a>
         </div>
-
       </div>
     </div>
   </section>
@@ -1016,9 +1025,11 @@
         <a href="https://www.linkedin.com/in/ashish-hidadugi/" target="_blank" aria-label="LinkedIn">
           <i class="fab fa-linkedin"></i>
         </a>
+
         <a href="mailto:ashishas0910@gmail.com" aria-label="Email">
           <i class="fas fa-envelope"></i>
         </a>
+
         <a href="tel:+917090641915" aria-label="Phone">
           <i class="fas fa-phone"></i>
         </a>
@@ -1045,8 +1056,9 @@
     </div>
   </div>
 
+  <!-- ✅ SCRIPT -->
   <script>
-    // Theme Toggle
+    // ✅ Theme Toggle
     const themeToggle = document.getElementById('themeToggle');
     const html = document.documentElement;
 
@@ -1073,16 +1085,15 @@
       }
     }
 
-    // Mobile Menu
+    // ✅ Mobile Menu
     const hamburger = document.getElementById('hamburger');
     const navMenu = document.getElementById('navMenu');
-
     hamburger.addEventListener('click', () => navMenu.classList.toggle('active'));
     document.querySelectorAll('.nav-link').forEach(link => {
       link.addEventListener('click', () => navMenu.classList.remove('active'));
     });
 
-    // Star Rating
+    // ✅ Star Rating
     const starRating = document.getElementById('starRating');
     const ratingInput = document.getElementById('feedbackRating');
     const stars = starRating.querySelectorAll('i');
@@ -1094,7 +1105,6 @@
         ratingInput.value = selectedRating;
         updateStars(selectedRating);
       });
-
       star.addEventListener('mouseenter', () => updateStars(index + 1));
     });
 
@@ -1112,35 +1122,37 @@
       });
     }
 
-    // ✅ Feedback Connected to Google Sheets
+    // ✅ Feedback (Your New Deployed URL)
     const feedbackForm = document.getElementById('feedbackForm');
     const feedbackSuccess = document.getElementById('feedbackSuccess');
+
+    const GOOGLE_SCRIPT_URL =
+      "https://script.google.com/macros/s/AKfycbwqH4As4QZiSBrZsyIdJ5X9dhQ6uaaryAF94X-ml51XXcjyFivo9Ip05QnVmOb6CDD9/exec";
 
     feedbackForm.addEventListener('submit', async (e) => {
       e.preventDefault();
 
-      const formData = {
-        name: document.getElementById('feedbackName').value.trim(),
-        email: document.getElementById('feedbackEmail').value.trim(),
-        rating: document.getElementById('feedbackRating').value,
-        message: document.getElementById('feedbackMessage').value.trim(),
-        timestamp: new Date().toLocaleString()
-      };
+      const name = document.getElementById('feedbackName').value.trim();
+      const email = document.getElementById('feedbackEmail').value.trim();
+      const rating = document.getElementById('feedbackRating').value;
+      const message = document.getElementById('feedbackMessage').value.trim();
 
-      if (formData.rating === "0") {
+      if (rating === "0") {
         alert("Please select a rating!");
         return;
       }
 
-      const GOOGLE_SCRIPT_URL =
-        "https://script.google.com/macros/s/AKfycbxPPX1jDDnhoqYT767ET9Rv-Pgq79hd_ogE1yOve0im7DdYF7nV4TBGjMHmjovL2Zwo/exec";
+      const formData = new FormData();
+      formData.append("name", name);
+      formData.append("email", email);
+      formData.append("rating", rating);
+      formData.append("message", message);
+      formData.append("timestamp", new Date().toLocaleString());
 
       try {
         await fetch(GOOGLE_SCRIPT_URL, {
           method: "POST",
-          mode: "no-cors",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(formData),
+          body: formData
         });
 
         feedbackForm.style.display = "none";
@@ -1155,8 +1167,8 @@
         }, 5000);
 
       } catch (error) {
-        console.error("Error submitting feedback:", error);
-        alert("There was an error submitting your feedback. Please try again.");
+        console.error("Feedback Error:", error);
+        alert("There was an error submitting feedback. Please try again.");
       }
     });
 
@@ -1171,7 +1183,7 @@
       });
     });
 
-    // Section fade-in on scroll
+    // Fade-in on scroll
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -1188,7 +1200,7 @@
       observer.observe(section);
     });
 
-    // ✅ Project Modal Functions
+    // ✅ Project Modal
     function openProjectModal(title, img, desc) {
       document.getElementById("modalProjectTitle").innerText = title;
       document.getElementById("modalProjectImg").src = img;
@@ -1202,12 +1214,15 @@
       document.body.style.overflow = "auto";
     }
 
+    window.openProjectModal = openProjectModal;
+    window.closeProjectModal = closeProjectModal;
+
     document.getElementById("projectModal").addEventListener("click", (e) => {
       if (e.target.id === "projectModal") closeProjectModal();
     });
 
     console.log("Portfolio loaded successfully ✅");
   </script>
-</body>
 
+</body>
 </html>
